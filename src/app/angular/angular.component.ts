@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, NgZone, Output } from '@angular/core';
+import { DataService } from '../angularJs/angularJs.service';
 
 @Component({
   selector: 'app-angular',
@@ -8,7 +9,10 @@ import { Component, EventEmitter, Input, NgZone, Output } from '@angular/core';
 export class AngularComponent {
   @Input() title!: string;
   @Output() changeTitle = new EventEmitter<string>();
-  constructor() {}
+  constructor(private dataService:DataService) {
+    console.log(this.dataService.getData())
+  }
+
 
   onChangeC() {
     this.changeTitle.emit('Change');

@@ -10,13 +10,11 @@ angular.module("about").component("about", {
       self.title = "Angular";
 
       self.onchangeC = function (e) {
-        console.log("dsdsdss"); // <-- здесь проверка срабатывания
+        console.log("dsdsdss"); 
         self.title = e;
-        $scope.$apply(); // чтобы обновить в AngularJS
       };
 
       self.onButtonClick = function(){
-        console.log(52)
         self.title = '52'
       }
     },

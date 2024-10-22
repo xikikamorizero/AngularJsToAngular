@@ -8,7 +8,6 @@ import { Component } from '@angular/core';
 export class Angular2Component {
   title: string = 'AngularJs -> Angular';
   onChangeC(value: string) {
-    console.log(1)
     this.title = value;
   }
   constructor() {}

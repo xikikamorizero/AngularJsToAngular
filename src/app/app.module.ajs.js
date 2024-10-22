@@ -16,8 +16,9 @@ import "./angularJs/angularJs.module";
 import "./angularJs/angularJs.component";
 import "./about/about.component";
 import { Angular2Component } from "./angular2/angular2.component";
-import { downgradeComponent } from "@angular/upgrade/static";
+import { downgradeComponent , downgradeInjectable} from "@angular/upgrade/static";
 import angular from "angular";
+import {AngularDataService} from './angular/angular.service'
 
 // Define the `phonecatApp` module
 export default angular
@@ -28,8 +29,9 @@ export default angular
     "phoneDetail",
     "phoneList",
     "about",
-    'angularJs'
+    "angularJs",
   ])
+  .factory("angularS", downgradeInjectable(AngularDataService))
   .directive(
     "angularDetail2",
     downgradeComponent({ component: Angular2Component })
